@@ -7,7 +7,6 @@ import static org.junit.jupiter.api.Assertions.*;
 public class CCBTest {
 
     Person person = new Person();
-    boolean checkpocket;
 
     @Given("a user no money in pocket = 0")
     public void a_user_no_money_in_pocket(){
