@@ -1,7 +1,9 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
-
-public class Income {
+public class Inexcome {
     private double sum;
     ArrayList<Double> amountList = new ArrayList<>();
     ArrayList<String> dateList = new ArrayList<>();
@@ -37,4 +39,23 @@ public class Income {
         }
         return sum;
     }
+
+    public void saveFiles(String filename) {
+        File file = new File(filename);
+        FileWriter writer;
+        try {
+            writer = new FileWriter(file, true);
+            for (int i = 0; i < amountList.size(); i++) {
+                writer.write(amountList.get(i) + " ");
+                writer.write(dateList.get(i) + " ");
+                writer.write(catagoryList.get(i) + " ");
+                writer.write(descriptionList.get(i) + "\n");
+            }
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 }

@@ -2,9 +2,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Person person = new Person();
-        Income income = new Income();
-        Excome excome = new Excome();
+        Inexcome income = new Inexcome();
+        Inexcome excome = new Inexcome();
         Scanner sc = new Scanner(System.in);
         System.out.println("-----------------------------------");
         System.out.println("Welcome to InExCome");
@@ -48,7 +47,7 @@ public class Main {
                 excome.add(money, date, cat, des);
             }
             if (order == 3) {
-                System.out.println("Your money :" + person.getPocket());
+                System.out.println("Your money :" + (income.sum()-excome.sum()));
             }
             if (order == 4) {
                 System.out.println("Your Income : " + income.getAmountList());
