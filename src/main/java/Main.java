@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Inexcome income = new Inexcome();
         Inexcome excome = new Inexcome();
+        File file = new File();
         Scanner sc = new Scanner(System.in);
         System.out.println("-----------------------------------");
         System.out.println("Welcome to InExCome");
@@ -34,6 +35,7 @@ public class Main {
                 System.out.print("Description : ");
                 String des = sc.next();
                 income.add(money, date, cat, des);
+                income.saveFiles("Income");
             }
             if (order == 2) {
                 System.out.print("Money : ");
@@ -45,6 +47,7 @@ public class Main {
                 System.out.print("Description : ");
                 String des = sc.next();
                 excome.add(money, date, cat, des);
+                income.saveFiles("Excome");
             }
             if (order == 3) {
                 System.out.println("Your money :" + (income.sum()-excome.sum()));
